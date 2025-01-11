@@ -11,9 +11,11 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="White power"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="212dp" />
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="212dp"
+        android:text="Resultado:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imagenParaMostrar"
@@ -33,39 +35,39 @@
         android:id="@+id/cerrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="274dp"
         android:layout_marginTop="609dp"
         android:text="Cerrar"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="274dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="156dp"
         android:layout_height="78dp"
+        android:layout_marginStart="213dp"
         android:layout_marginTop="67dp"
-        android:text="Prueba"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="213dp" />
+        android:text="FEES"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/cambiarImagen"
         android:layout_width="196dp"
         android:layout_height="72dp"
-        android:text="Switch"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="618dp" />
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="618dp"
+        android:text="Cambiar imagen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/computerVision"
         android:layout_width="175dp"
         android:layout_height="81dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="494dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="485dp"
         android:text="computer vision"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

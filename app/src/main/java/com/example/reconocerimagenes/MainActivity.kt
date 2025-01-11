@@ -9,6 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import java.io.IOException
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
@@ -25,6 +26,7 @@ fun Context.assetsToBitmap(fileName: String): Bitmap?{
     } catch (e: IOException) { null }
 }
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +34,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val xmlImagenParaMostrar: ImageView = findViewById(R.id.imagenParaMostrar)
-        val bitmap: Bitmap? = assetsToBitmap("euro.png")
-        bitmap?.apply {
+        var imagenCargada : String = "euro.png"
+        var imagenMapeada = assetsToBitmap(imagenCargada)
+        imagenMapeada?.apply {
             xmlImagenParaMostrar.setImageBitmap(this)
         }
 
@@ -42,21 +45,30 @@ class MainActivity : AppCompatActivity() {
 
         xmlBotonComputerVision.setOnClickListener {
             val clasificador = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS)
-            val image = InputImage.fromBitmap(bitmap!!, 0)
+            var image = InputImage.fromBitmap(imagenMapeada!!, 0)
             var textoFinal = ""
             clasificador.process(image)
                 .addOnSuccessListener { labels ->
                     // Task completed successfully
                     for (label in labels) {
-                        val text = label.text
-                        val confidence = label.confidence
-                        textoFinal += "$text : $confidence\n"
+                        var text = label.text
+                        var confidence = label.confidence
+                        textoFinal += "Predicción: $text      Probabilidad: $confidence\n"
                     }
                     xmlTextoCuadroPrincipalTexto.text = textoFinal
                 }
                 .addOnFailureListener { e ->
                     // Task failed with an exception
                 }
+        }
+
+        val xmlAlternadorCambiarImagen: Switch = findViewById(R.id.cambiarImagen)
+        xmlAlternadorCambiarImagen.setOnCheckedChangeListener { _, isChecked ->
+            imagenCargada = if (imagenCargada == "arbol.png") "euro.png" else "arbol.png"
+            imagenMapeada = assetsToBitmap(imagenCargada)
+            imagenMapeada?.let { bitmap ->
+                xmlImagenParaMostrar.setImageBitmap(bitmap)
+            }
         }
 
         val xmlBotonCerrar: Button = findViewById(R.id.cerrar)
