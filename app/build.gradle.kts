@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.example.reconocerimagenes"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -46,5 +46,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.google.mlkit:image-labeling:17.0.3")
+    implementation("com.google.mlkit:image-labeling:17.0.9")
 }
