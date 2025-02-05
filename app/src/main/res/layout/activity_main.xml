@@ -57,17 +57,27 @@
         android:layout_height="72dp"
         android:layout_marginStart="35dp"
         android:layout_marginTop="618dp"
-        android:text="Cambiar imagen"
+        android:text="Cambiar imagen\n de muestra"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/computerVision"
-        android:layout_width="175dp"
-        android:layout_height="81dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="485dp"
+        android:layout_width="169dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="484dp"
         android:text="computer vision"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/usarGaleria"
+        android:layout_width="155dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="484dp"
+        android:text="usar galería"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
