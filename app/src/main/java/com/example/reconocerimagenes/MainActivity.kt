@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                         imagenMapeada?.let {
                             xmlImagenParaMostrar.setImageBitmap(it)
                         }
-                        xmlImagenParaMostrar.scaleType = ImageView.ScaleType.FIT_CENTER
+                        xmlImagenParaMostrar.scaleType = ImageView.ScaleType.FIT_XY
                         xmlImagenParaMostrar.adjustViewBounds = true
                     } catch (e: IOException) {
                         e.printStackTrace()
